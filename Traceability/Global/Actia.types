@@ -1,0 +1,499 @@
+
+[Types]
+Names=Actia_Word_standard,Actia_Justification,Actia_Word_standard_multi,Actia_RiskAnalysis,Actia_RiskAnalysis_multi,Actia_Justification_multi
+
+[Actia_Word_standard]
+Tool=WordWithStyles
+ToolEdit=Word
+Image=word
+ToolPostprocess=WordActia
+Section1Name=Heading
+Section1Guid=_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Section1=^[Hh]eading (\d+)\t(?:([\d\.]+)[ \t](.*)|([^\d\n].+))$
+Section1Indexes=6,1,2,1
+Requirement1Name=Requirement
+Requirement1Guid=_197ECB0A_F31B_4F85_A378_4D6692613235
+Requirement1=\|1 [^\t]+\t\s*([\w\-]+_[\w\-]+_\d+)(?: *\- *)?([^\n\|]*)$
+Reference1Name=Satisfies
+Reference1IsMultiple=0
+Reference1Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference1Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference1Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference1Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference1Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference1Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference1=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Satisfies:(.*?)(?=\n|\|)
+Reference1Sub=([^,\s]+)
+Reference2Name=Validates
+Reference2IsMultiple=0
+Reference2Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference2Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference2Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference2Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference2Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference2Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference2=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Validates:(.*?)(?=\n|\|)
+Reference2Sub=([^,\s]+)
+Reference3Name=Is Allocated To
+Reference3IsMultiple=0
+Reference3Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference3Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference3Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference3Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference3Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference3Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference3=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Is Allocated To:(.*?)(?=\n|\|)
+Reference3Sub=([^,\s]+)
+Reference4Name=Is Justified By
+Reference4IsMultiple=0
+Reference4Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference4Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference4Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference4Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference4Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference4Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference4=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Is Justified By:(.*?)(?=\n|\|)
+Reference4Sub=([^,\s]+)
+Reference5Name=Applies To
+Reference5IsMultiple=0
+Reference5Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference5Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference5Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference5Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference5Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference5Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference5=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Applies To:(.*?)(?=\n|\|)
+Reference5Sub=([^,\s]+)
+Attribute1Name=Allocation
+Attribute1Guid=_3469774E_3529_451A_A474_455A9C8CF624
+Attribute1Print=$t : $i
+Attribute1IsMultiple=1
+Attribute1Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute1Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute1Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute1Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute1Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute1Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute1=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Allocation:(.*?)(?=\n|\|)
+Attribute1Sub=([^\s,][^,]+[^\s,])
+Attribute2Name=Maturity
+Attribute2Print=$t : $i
+Attribute2Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute2Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute2Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute2Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute2Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute2Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute2=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Maturity:(.*?)(?=\n|\|)
+Attribute3Name=Test Type
+Attribute3Print=V&V : $i
+Attribute3IsMultiple=1
+Attribute3EnumValues=Testing,Analysis,In_Service_Experience,Measurement,Checking,Qualification Test
+Attribute3Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute3Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute3Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute3Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute3Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute3Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute3=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*V&V:(.*?)(?=\n|\|)
+Attribute3Sub=(?<=^|[ ,;])(\w+)(?=$|[ ,;\[])
+Attribute4Name=Type
+Attribute4Print=$t : $i
+Attribute4Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute4Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute4Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute4Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute4Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute4Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute4=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Type:(.*?)(?=\n|\|)
+Attribute5Name=Overall Test
+Attribute5Print=$t : $i
+Attribute5=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Overall Test:(.*?)(?=\n|\|)
+Attribute6Name=Bad_Delegates_VM_Testing
+Attribute6Print=$t = $i
+Attribute6Image=rationalChange
+Attribute6IsMultiple=1
+Attribute6IsVisible=0
+Attribute6=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*V&V:.*\bTesting\b\s*\[(.*?)\]
+Attribute6Sub=(\w+)
+Attribute7Name=Document Title
+Attribute7Parents=Actia_Word_standard
+Attribute7Print=$t = $i
+Attribute7IsMultiple=1
+Attribute7=^EndHeadersFooters.*\n.*\n([\s\S]+?)\n\|1
+Attribute7Sub=^[^\t]+\t(.+)
+Attribute8Name=Document Reference
+Attribute8Parents=Actia_Word_standard
+Attribute8Print=$t = $i
+Attribute8IsMultiple=1
+Attribute8=^\|1 header\s+Ref\.\s*:\s*(\w+)
+Attribute9Name=Document Index
+Attribute9Parents=Actia_Word_standard
+Attribute9Print=$t = $i
+Attribute9=\|1 header\s+Ind\.\s*:\s*(\w+)
+Attribute10Name=Context
+Attribute10Print=$t = $i
+Attribute10IsMultiline=1
+Attribute10IsMultiple=1
+Attribute10=^\|1 [^\t]+\t\s*Context.*\n(\|1.*?)\|2
+Attribute10Sub=\|1 [^\t]+\t(.*?)(?=\|1|$)
+Attribute11Name=Initial conditions
+Attribute11Print=$t = $i
+Attribute11IsMultiline=1
+Attribute11IsMultiple=1
+Attribute11=^\|1 [^\t]+\t\s*Context.*\n.*?(\|2.*?)\|3
+Attribute11Sub=\|2 [^\t]+\t(.*?)(?=\|2|$)
+Attribute12Name=Operating procedure
+Attribute12Print=$t = $i
+Attribute12IsMultiline=1
+Attribute12IsMultiple=1
+Attribute12=^\|1 [^\t]+\t\s*Context.*\n.*?(\|3.*?)\|4
+Attribute12Sub=\|3 [^\t]+\t(.*?)(?=\|3|$)
+Attribute13Name=Predicted result
+Attribute13Print=$t = $i
+Attribute13IsMultiline=1
+Attribute13IsMultiple=1
+Attribute13=^\|1 [^\t]+\t\s*Context.*\n.*?(\|4.*?)\|5
+Attribute13Sub=\|4 [^\t]+\t(.*?)(?=\|4|$)
+Attribute14Name=Test Result
+Attribute14Print=$t = $i
+Attribute14=^\|1 [^\t]+\t\s*Context.*\n.*?\|5 [^\t]+\t(.*?)\|6
+Attribute14Sub=(\S.*\S)
+Attribute15Name=Kx
+Attribute15Print=$t = $i
+Attribute15IsMultiline=1
+Attribute15IsMultiple=1
+Attribute15=^\|1 [^\t]+\t\s*Context.*\n.*?(\|6.*?)\|7
+Attribute15Sub=\|6 [^\t]+\t(.*?)(?=\|6|$)
+Attribute16Name=Measure
+Attribute16Print=$t = $i
+Attribute16IsMultiline=1
+Attribute16IsMultiple=1
+Attribute16=^\|1 [^\t]+\t\s*Context.*\n.*?(\|7.*?)\|8
+Attribute16Sub=\|7 [^\t]+\t(.*?)(?=\|7|$)
+Attribute17Name=Comments
+Attribute17Print=$t = $i
+Attribute17IsMultiline=1
+Attribute17IsMultiple=1
+Attribute17=^\|1 [^\t]+\t\s*Context.*\n.*?(\|8.*)
+Attribute17Sub=\|8 [^\t]+\t(.*?)(?=\|8|$)
+Link1Name=Delegates_VM_Testing
+Link1Print=Testing Delegation: $e
+Link1Image=rationalChange
+Link1=
+Text1Name=Text
+Text1RegularExpression=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*[^\|]([\s\S]*?)\n[^\t]+\t\s*\[END\]
+Text1Sub=[^\t]+\t(.+)
+Picture1Name=Picture
+Picture1Guid=_672493D3_6A69_4D7D_BB7A_87AD0D2D6352
+Picture1RegularExpression=<Picture<([^>]+)
+FileExtension=doc,docx,docm
+TextFormat=3
+IntermediateFileEncoding=UTF8
+
+[Actia_Justification]
+Tool=ExcelXML
+ToolEdit=Excel
+Image=excel
+Variable1Name=worksheet
+Variable1Label=Worksheet
+Variable1Type=string
+Section1Name=Worksheet
+Section1Tree=<Worksheet name="$i"></Worksheet>
+Requirement1Name=Requirement
+Requirement1Tree=<Row><Cell col="^1$">$i(\w+_\w+)</Cell><Cell col="^2$">$t$o</Cell></Row>
+Attribute1Name=Origine
+Attribute1Print=$t : $i
+Attribute1Tree=<Row><Cell col="^1$">\w+_\w+</Cell><Cell col="^3$">$i</Cell></Row>
+Attribute2Name=Statut
+Attribute2Print=$t : $i
+Attribute2Tree=<Row><Cell col="^1$">\w+_\w+</Cell><Cell col="^4$">$i</Cell></Row>
+FileExtension=xls,xlsx,xlsm
+TextFormat=3
+Type=xml
+
+[Actia_Word_standard_multi]
+Tool=WordWithStyles
+ToolEdit=WordWithStyles
+Image=word_directory
+ToolPostprocess=WordActia
+MergeHomonymousEntities=1
+Section1Name=Directory
+Section1Print=$l
+Section1Image=word_directory
+Section1=^BEGIN_DIRECTORY: (.+):(.+)$
+Section1End=^END_DIRECTORY: .+$
+Section2Name=File
+Section2Parents=Actia_Word_standard_multi,Directory
+Section2Print=$l
+Section2Image=word
+Section2IdentifyChildren=1
+Section2=^BEGIN_FILE: (.+):(.+)$
+Section2End=^END_FILE: .+$
+Section3Name=Heading 1
+Section3Parents=File
+Section3=^[Hh]eading 1\t(?:([\d\.]+)[ \t](.+)|([^\d\n].+))$
+Section3Indexes=1,2,1,0
+Section4Name=Heading 2
+Section4Parents=Heading 1
+Section4=^[Hh]eading 2\t(?:([\d\.]+)[ \t](.+)|([^\d\n].+))$
+Section4Indexes=1,2,1,0
+Section5Name=Heading 3
+Section5Parents=Heading 2
+Section5=^[Hh]eading 3\t(?:([\d\.]+)[ \t](.+)|([^\d\n].+))$
+Section5Indexes=1,2,1,0
+Section6Name=Heading 4
+Section6Parents=Heading 3
+Section6=^[Hh]eading 4\t(?:([\d\.]+)[ \t](.+)|([^\d\n].+))$
+Section6Indexes=1,2,1,0
+Requirement1Name=Requirement
+Requirement1=\|1 [^\t]+\t\s*([\w\-]+_[\w\-]+_\d+)(?: *\- *)?([^\n\|]*)$
+Reference1Name=Satisfies
+Reference1IsMultiple=0
+Reference1Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference1Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference1Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference1Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference1Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference1Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference1=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Satisfies:(.*?)(?=\n|\|)
+Reference1Sub=([^,\s]+)
+Reference2Name=Validates
+Reference2IsMultiple=0
+Reference2Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference2Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference2Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference2Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference2Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference2Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference2=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Validates:(.*?)(?=\n|\|)
+Reference2Sub=([^,\s]+)
+Reference3Name=Is Allocated To
+Reference3IsMultiple=0
+Reference3Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference3Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference3Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference3Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference3Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference3Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference3=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Is Allocated To:(.*?)(?=\n|\|)
+Reference3Sub=([^,\s]+)
+Reference4Name=Is Justified By
+Reference4IsMultiple=0
+Reference4Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference4Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference4Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference4Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference4Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference4Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference4=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Is Justified By:(.*?)(?=\n|\|)
+Reference4Sub=([^,\s]+)
+Reference5Name=Applies To
+Reference5IsMultiple=0
+Reference5Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Reference5Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Reference5Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Reference5Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Reference5Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Reference5Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Reference5=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Applies To:(.*?)(?=\n|\|)
+Reference5Sub=([^,\s]+)
+Attribute1Name=Allocation
+Attribute1Print=$t : $i
+Attribute1IsMultiple=1
+Attribute1Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute1Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute1Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute1Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute1Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute1Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute1=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Allocation:(.*?)(?=\n|\|)
+Attribute1Sub=([^\s,][^,]+[^\s,])
+Attribute2Name=Maturity
+Attribute2Print=$t : $i
+Attribute2Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute2Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute2Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute2Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute2Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute2Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute2=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Maturity:(.*?)(?=\n|\|)
+Attribute3Name=Test Type
+Attribute3Print=V&V : $i
+Attribute3IsMultiple=1
+Attribute3EnumValues=Testing,Analysis,In_Service_Experience,Measurement,Checking,Qualification Test
+Attribute3Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute3Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute3Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute3Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute3Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute3Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute3=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*V&V:(.*?)(?=\n|\|)
+Attribute3Sub=(?<=^|[ ,;])(\w+)(?=$|[ ,;\[])
+Attribute4Name=Type
+Attribute4Print=$t : $i
+Attribute4Value1Key=guid_E5160843_CF32_4D0D_8D2F_D8C67871816D
+Attribute4Value1Value=_4C5F271A_8F0E_4496_AFA1_3DCDD3C32898_
+Attribute4Value2Key=guid_D42C5B4C_D773_482A_8C40_FBB1B6166952
+Attribute4Value2Value=_F170DB9C_556E_4AE0_B177_DBFADED4E63D_
+Attribute4Value3Key=guid_197ECB0A_F31B_4F85_A378_4D6692613235
+Attribute4Value3Value=_97970123_1083_4E9A_B991_D77C4C0413F9
+Attribute4=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Type:(.*?)(?=\n|\|)
+Attribute5Name=Overall Test
+Attribute5Print=$t : $i
+Attribute5=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*Overall Test:(.*?)(?=\n|\|)
+Attribute6Name=Bad_Delegates_VM_Testing
+Attribute6Print=$t = $i
+Attribute6Image=rationalChange
+Attribute6IsMultiple=1
+Attribute6IsVisible=0
+Attribute6=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*.*\|\d [^\t]+\t\s*V&V:.*\bTesting\b\s*\[(.*?)\]
+Attribute6Sub=(\w+)
+Attribute7Name=Document Title
+Attribute7Parents=File
+Attribute7Print=$t = $i
+Attribute7IsMultiple=1
+Attribute7=^EndHeadersFooters.*\n.*\n([\s\S]+?)\n\|1
+Attribute7Sub=^[^\t]+\t(.+)
+Attribute8Name=Document Reference
+Attribute8Parents=File
+Attribute8Print=$t = $i
+Attribute8IsMultiple=1
+Attribute8=^\|1 header\s+Ref\.\s*:\s*(\w+)
+Attribute9Name=Document Index
+Attribute9Parents=File
+Attribute9Print=$t = $i
+Attribute9=\|1 header\s+Ind\.\s*:\s*(\w+)
+Attribute10Name=Context
+Attribute10Print=$t = $i
+Attribute10IsMultiline=1
+Attribute10IsMultiple=1
+Attribute10=^\|1 [^\t]+\t\s*Context.*\n(\|1.*?)\|2
+Attribute10Sub=\|1 [^\t]+\t(.*?)(?=\|1|$)
+Attribute11Name=Initial conditions
+Attribute11Print=$t = $i
+Attribute11IsMultiline=1
+Attribute11IsMultiple=1
+Attribute11=^\|1 [^\t]+\t\s*Context.*\n.*?(\|2.*?)\|3
+Attribute11Sub=\|2 [^\t]+\t(.*?)(?=\|2|$)
+Attribute12Name=Operating procedure
+Attribute12Print=$t = $i
+Attribute12IsMultiline=1
+Attribute12IsMultiple=1
+Attribute12=^\|1 [^\t]+\t\s*Context.*\n.*?(\|3.*?)\|4
+Attribute12Sub=\|3 [^\t]+\t(.*?)(?=\|3|$)
+Attribute13Name=Predicted result
+Attribute13Print=$t = $i
+Attribute13IsMultiline=1
+Attribute13IsMultiple=1
+Attribute13=^\|1 [^\t]+\t\s*Context.*\n.*?(\|4.*?)\|5
+Attribute13Sub=\|4 [^\t]+\t(.*?)(?=\|4|$)
+Attribute14Name=Test Result
+Attribute14Print=$t = $i
+Attribute14=^\|1 [^\t]+\t\s*Context.*\n.*?\|5 [^\t]+\t(.*?)\|6
+Attribute14Sub=(\S.*\S)
+Attribute15Name=Kx
+Attribute15Print=$t = $i
+Attribute15IsMultiline=1
+Attribute15IsMultiple=1
+Attribute15=^\|1 [^\t]+\t\s*Context.*\n.*?(\|6.*?)\|7
+Attribute15Sub=\|6 [^\t]+\t(.*?)(?=\|6|$)
+Attribute16Name=Measure
+Attribute16Print=$t = $i
+Attribute16IsMultiline=1
+Attribute16IsMultiple=1
+Attribute16=^\|1 [^\t]+\t\s*Context.*\n.*?(\|7.*?)\|8
+Attribute16Sub=\|7 [^\t]+\t(.*?)(?=\|7|$)
+Attribute17Name=Comments
+Attribute17Print=$t = $i
+Attribute17IsMultiline=1
+Attribute17IsMultiple=1
+Attribute17=^\|1 [^\t]+\t\s*Context.*\n.*?(\|8.*)
+Attribute17Sub=\|8 [^\t]+\t(.*?)(?=\|8|$)
+Link1Name=Delegates_VM_Testing
+Link1Print=Testing Delegation: $e
+Link1Image=rationalChange
+Link1=
+Text1Name=Text
+Text1RegularExpression=\|1 [^\t]+\t\s*[\w\-]+_[\w\-]+_\d+(?: *\- *)?[^\n\|]*\n(?:\|1.*\n)*[^\|]([\s\S]*?)\n[^\t]+\t\s*\[END\]
+Text1Sub=[^\t]+\t(.+)
+Picture1Name=Picture
+Picture1RegularExpression=<Picture<([\S\s]+?)>Picture>
+MatchingFileNames=*.doc,*.docx,*.docm
+ExcludedFileNames=*~*.doc,*~*.docx,*~*.docm
+IntermediateFileEncoding=UTF8
+
+[Actia_RiskAnalysis]
+Tool=ExcelXML
+ToolEdit=Excel
+Image=excel
+Variable1Name=worksheet
+Variable1Label=Worksheet
+Variable1Type=string
+ToolPostprocess=RiskAnalysis
+Requirement1Name=Requirement
+Requirement1Tree=<Worksheet name="Risk Analysis"><Row><Cell col="^1$">$i(\d+)</Cell></Row></Worksheet>
+Attribute1Name=docName
+Attribute1IsVisible=0
+Attribute1Tree=<Worksheet name="Front page"><Row num="^4$"><Cell col="^11$">$i</Cell></Row></Worksheet>
+FileExtension=xls,xlsx,xlsm
+TextFormat=3
+Type=xml
+
+[Actia_RiskAnalysis_multi]
+Tool=ExcelXML
+ToolEdit=Excel
+Image=excel
+Variable1Name=worksheet
+Variable1Label=Worksheet
+Variable1Type=string
+ToolPostprocess=RiskAnalysis
+MergeHomonymousEntities=1
+Section1Name=Directory
+Section1Image=folder
+Section1Tree=<Dir label="$i"></Dir>
+Section2Name=File
+Section2Parents=Directory,Actia_RiskAnalysis_multi
+Section2Image=excelX
+Section2Tree=<File label="$i"></File>
+Requirement1Name=Requirement
+Requirement1Tree=<Worksheet name="Risk Analysis"><Row><Cell col="^1$">$i(\d+)</Cell></Row></Worksheet>
+Attribute1Name=docName
+Attribute1IsVisible=0
+Attribute1Tree=<Worksheet name="Front page"><Row num="^4$"><Cell col="^11$">$i</Cell></Row></Worksheet>
+MatchingFileNames=*.xls,*.xlsx,*.xlsm
+ExcludedFileNames=*~*.xls,*~*.xlsx,*~*.xlsm
+TextFormat=3
+Type=xml
+
+[Actia_Justification_multi]
+Tool=ExcelXML
+ToolEdit=Excel
+Image=excel
+Variable1Name=worksheet
+Variable1Label=Worksheet
+Variable1Type=string
+MergeHomonymousEntities=1
+Section1Name=Worksheet
+Section1Parents=File
+Section1Tree=<Worksheet name="$i"></Worksheet>
+Section2Name=Directory
+Section2Image=folder
+Section2Tree=<Dir label="$i"></Dir>
+Section3Name=File
+Section3Parents=Directory,Actia_Justification_multi
+Section3Image=excelX
+Section3Tree=<File label="$i"></File>
+Requirement1Name=Requirement
+Requirement1Tree=<Row><Cell col="^1$">$i(\w+_\w+)</Cell><Cell col="^2$">$t$o</Cell></Row>
+Attribute1Name=Origine
+Attribute1Print=$t : $i
+Attribute1Tree=<Row><Cell col="^1$">\w+_\w+</Cell><Cell col="^3$">$i</Cell></Row>
+Attribute2Name=Statut
+Attribute2Print=$t : $i
+Attribute2Tree=<Row><Cell col="^1$">\w+_\w+</Cell><Cell col="^4$">$i</Cell></Row>
+MatchingFileNames=*.xls,*.xlsx,*.xlsm
+ExcludedFileNames=*~*.xls,*~*.xlsx,*~*.xlsm
+TextFormat=3
+Type=xml
+

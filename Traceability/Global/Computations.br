@@ -1,0 +1,14 @@
+// Calcul du nombre d'exigences client
+METHOD Project.nbUserRequirements() -doc : {
+	$CNT(documents[category="Customer Needs"].requirements);
+} LABEL "Computation,user requirements count" | "Calcul,nombre d'exigences utilisateur";
+
+// Calcul du nombre d'exigences client couvertes par des exigences système de niveau équipement
+METHOD Project.nbCoveredUserRequirements() -doc : {
+	$CNT(documents[category="Customer Needs"].requirements[$SOME(requirementReferencers)]);
+} LABEL "Computation,covered user requirements count" | "Calcul,nombre d'exigences utilisateur couvertes";
+
+// Calcul du nombre d'exigences client non couvertes par des exigences système de niveau équipement
+METHOD Project.nbUncoveredUserRequirements() -doc : {
+	$CNT(documents[category="Customer Needs"].requirements[$NO(requirementReferencers)]);
+} LABEL "Computation,uncovered user requirements count" | "Calcul,nombre d'exigences utilisateur non couvertes";

@@ -1,0 +1,34 @@
+// Post-traitement des analyses de risques :
+// - création d'identifiant par concaténation du docName et du numéro de risque
+METHOD Document.postprocessRiskAnalysis() : {
+	TMP prefix := attributeValue("docName");
+	requirements[STRMATCHRE(ident, "^\d+$")].{
+		ident := prefix + "_" + ident;
+	}
+};
+
+// Transformation des attributs de délégation en liens de délégation
+METHOD AbstractRequirement.setDelegationLinks() : {
+	TMP linkType : ElementType;
+	TMP linkTarget : AbstractRequirement;
+	TMP attr : Attribute;
+	
+	attributes[STRMATCH(typeName, "Bad_Delegates_*")].{
+		attr := EACH;
+		linkType := document.type.types[name = STRSEARCHRE(attr.typeName, "Bad_(.*)")];
+		linkTarget := (THIS.allRequirementReferencers $+ THIS.allReferences)[STRMATCH(ident, attr.ident + "*")];
+		$SOME(linkTarget)
+		IF TRUE : {
+			THIS.newLink(linkType, linkTarget);
+			DESTROY(attr);
+		}
+	};
+};
+
+// Post-traitement des formats Word :
+// - Transformation des attributs de délégation en liens de délégation
+// - Suppression des "File" vides
+METHOD Document.postprocessWordActia() : {
+	isRequirementDocument IF TRUE : {requirements.setDelegationLinks};
+	DESTROY(allSections[typeName="File" AND $NO(requirements)]);
+};

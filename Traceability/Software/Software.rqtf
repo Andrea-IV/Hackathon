@@ -1,0 +1,185 @@
+[Files]
+Names=SW Specification,SW Justifications,Software Architecture,SW Validation,XXX Specification,XXX Justifications,XXX Design,XXX Validation,YYY Specification,YYY Justifications,YYY Design,YYY Validation
+
+[SW Specification]
+Category=Domain Specification
+Cover1=SW Justifications,Software Architecture,XXX Specification,YYY Specification
+Cover1Category=Satisfies
+Cover1Position=3030@2930
+Cover1AnnotationPosition=2726@2791
+Cover2=SW Validation
+Cover2Category=Validates
+Cover2Position=4220@2400
+Cover2AnnotationPosition=4326@2550
+GraphicPosition=3004@2399
+Variable1Name=withAnnotations
+Variable1Value=0
+Variable2Name=arabicRomanText
+Variable2Value=0
+Variable3Name=tabCellsFolding
+Variable3Value=0
+Variable4Name=withTextZones
+Variable4Value=1
+Variable5Name=withCharacterStyles
+Variable5Value=0
+Variable6Name=withBookmarks
+Variable6Value=0
+Variable7Name=withImages
+Variable7Value=1
+IgnoredTypes=Satisfies
+Type=Actia_Word_standard_multi
+WithRichText=0
+Path=..\..\Software\Requirements
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Requirements
+DisplayedVariable=ignoredTypes
+
+[SW Justifications]
+Category=Justifications
+Cover1=XXX Specification,YYY Specification
+Cover1Kind=2
+Cover1Category=Is justified by
+Cover1Position=600@3690
+Cover1AnnotationPosition=460@3940
+GraphicPosition=584@3225
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Justifications
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Justifications
+DisplayedVariable=_category
+
+[Software Architecture]
+Category=Architecture
+Cover1=XXX Specification,YYY Specification
+Cover1Category=Is allocated to
+Cover1Position=5300@3520
+Cover1AnnotationPosition=5560@3690
+GraphicPosition=5284@3089
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Architecture
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Architecture
+DisplayedVariable=_category
+
+[SW Validation]
+Category=Test Plan
+GraphicPosition=5354@2400
+Type=Actia_Word_standard_multi
+ModificationDocument1=..\..\Software\Validation\Reports
+ModificationDocument1AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Validation\Reports
+ModificationDocument1Type=Actia_Word_standard_multi
+ModificationDocument1Accumulation=0
+Path=..\..\Software\Validation\Plans
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Validation\Plans
+DisplayedVariable=_category
+
+[XXX Specification]
+Category=Domain Specification
+Cover1=XXX Design,XXX Justifications
+Cover1Category=Satisfies
+Cover1Position=1650@4560
+Cover1AnnotationPosition=1340@4440
+Cover2=XXX Validation
+Cover2Category=Validates
+Cover2Position=2760@4450
+Cover2AnnotationPosition=2420@4510
+GraphicPosition=1620@4180
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Component XXX\Requirements
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component XXX\Requirements
+DisplayedVariable=_category
+
+[XXX Justifications]
+Category=Justifications
+Cover1=XXX Design
+Cover1Kind=2
+Cover1Category=Is justified by
+Cover1Position=1110@4960
+Cover1AnnotationPosition=750@5090
+GraphicPosition=690@4730
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Component XXX\Justifications
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component XXX\Justifications
+DisplayedVariable=_category
+
+[XXX Design]
+Category=Design
+GraphicPosition=1654@5219
+Variable1Name=withAnnotations
+Variable1Value=0
+Variable2Name=arabicRomanText
+Variable2Value=0
+Variable3Name=tabCellsFolding
+Variable3Value=0
+Variable4Name=withTextZones
+Variable4Value=1
+Variable5Name=withCharacterStyles
+Variable5Value=0
+Variable6Name=withBookmarks
+Variable6Value=0
+Variable7Name=withImages
+Variable7Value=1
+Type=Actia_Word_standard_multi
+WithRichText=0
+Path=..\..\Software\Component XXX\Design
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component XXX\Design
+DisplayedVariable=_category
+
+[XXX Validation]
+Category=Test Plan
+GraphicPosition=2740@4730
+Type=Actia_Word_standard_multi
+ModificationDocument1=..\..\Software\Component XXX\Validation\Reports
+ModificationDocument1AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component XXX\Validation\Reports
+ModificationDocument1Type=Actia_Word_standard_multi
+ModificationDocument1Accumulation=0
+Path=..\..\Software\Component XXX\Validation\Plans
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component XXX\Validation\Plans
+DisplayedVariable=_category
+
+[YYY Specification]
+Category=Domain Specification
+Cover1=YYY Justifications,YYY Design
+Cover1Category=Satisfies
+Cover1Position=5020@4560
+Cover1AnnotationPosition=4710@4480
+Cover2=YYY Validation
+Cover2Category=Validates
+Cover2Position=5960@4450
+Cover2AnnotationPosition=5690@4550
+GraphicPosition=5000@4230
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Component YYY\Requirements
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component YYY\Requirements
+DisplayedVariable=_category
+
+[YYY Justifications]
+Category=Justifications
+Cover1=YYY Design
+Cover1Kind=2
+Cover1Category=Is justified by
+Cover1Position=4610@5000
+Cover1AnnotationPosition=4140@5090
+GraphicPosition=4190@4770
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Component YYY\Justifications
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component YYY\Justifications
+DisplayedVariable=_category
+
+[YYY Design]
+Category=Design
+GraphicPosition=5030@5230
+Type=Actia_Word_standard_multi
+Path=..\..\Software\Component YYY\Design
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component YYY\Design
+DisplayedVariable=_category
+
+[YYY Validation]
+Category=Test Plan
+GraphicPosition=5970@4750
+Type=Actia_Word_standard_multi
+ModificationDocument1=..\..\Software\Component YYY\Validation\Reports
+ModificationDocument1AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component YYY\Validation\Reports
+ModificationDocument1Type=Actia_Word_standard_multi
+ModificationDocument1Accumulation=0
+Path=..\..\Software\Component YYY\Validation\Plans
+AbsolutePath=C:\Users\françois.grizard\ADN\2018-Actia Automotive-Déploiement Reqtify - Documents\Partage Actia-ADN\Livraisons\2018-10-XX\Project Template\Software\Component YYY\Validation\Plans
+DisplayedVariable=_category
+

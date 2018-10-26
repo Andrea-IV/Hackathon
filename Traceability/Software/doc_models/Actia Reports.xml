@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: reqtify -->
+
+<DocumentList name1="Actia Reports" name2="Rapports Actia">
+	<Document name1="Customer Requirements Coverage" type="document" receiverName="project" receiverClass="Project" template="default.xlsx" reportName="User Needs Coverage">
+		<StructParameter name="withTitle" value="FALSE" />
+		<Structure type="table">
+			<StructParameter name="numberOfColumns" value="4" />
+			<Structure type="titleRow">
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="User Needs ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="350pt" />
+					<DataTerminalText text1="User Needs Description" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Covered by ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="350pt" />
+					<DataTerminalText text1="Covered by Description" />
+				</Structure>
+			</Structure>
+			<DataMethodCallLoop receiver="project" variable="userNeedsDocs" method="documents" condition="category=&quot;User Needs&quot;">
+				<DataMethodCallLoop receiver="userNeedsDocs" variable="curReq" method="requirements">
+					<DataMethodCallLoop receiver="curReq" variable="curCov" method="requirementReferencers" loopIfNull="true">
+						<Structure type="line">
+							<Structure type="cell">
+								<StructParameter name="displayBlank" value="TRUE" />
+								<DataMethodCallText receiver="curReq" method="ident">
+								</DataMethodCallText>
+							</Structure>
+							<Structure type="cell">
+								<StructParameter name="displayBlank" value="TRUE" />
+								<DataMethodCallText receiver="curReq" method="richText">
+								</DataMethodCallText>
+							</Structure>
+							<Structure type="cell">
+								<DataMethodCallText receiver="curCov" method="ident">
+								</DataMethodCallText>
+							</Structure>
+							<Structure type="cell">
+								<DataMethodCallText receiver="curCov" method="richText">
+								</DataMethodCallText>
+							</Structure>
+						</Structure>
+					</DataMethodCallLoop>
+				</DataMethodCallLoop>
+			</DataMethodCallLoop>
+		</Structure>
+	</Document>
+	<Document name1="Test Coverage Matrix" type="document" receiverName="project" receiverClass="Project" template="default.xlsx" reportName="Test Coverage Matrix">
+		<DocParameter name="reqDocs" class="Document" condition="isRequirementDocument" />
+		<StructParameter name="withTitle" value="FALSE" />
+		<Structure type="table">
+			<StructParameter name="numberOfColumns" value="6" />
+			<Structure type="titleRow">
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Requirement ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Plan Reference" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="100pt" />
+					<DataTerminalText text1="Test Plan Version" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="250pt" />
+					<DataTerminalText text1="Test Plan Name" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Case ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="80pt" />
+					<DataTerminalText text1="Test Type" index="0" />
+				</Structure>
+			</Structure>
+			<DataMethodCallLoop receiver="reqDocs" variable="curReq" method="requirements">
+				<DataMethodCallLoop receiver="curReq" variable="curVerif" method="getVerifications" loopIfNull="true">
+					<Structure type="line">
+						<Structure type="cell">
+							<StructParameter name="displayBlank" value="TRUE" />
+							<DataMethodCallText receiver="curReq" method="ident">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocReference">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocIndex">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocTitle">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="ident">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="attributeValue">
+								<CallParameter value="Type" />
+							</DataMethodCallText>
+						</Structure>
+					</Structure>
+				</DataMethodCallLoop>
+			</DataMethodCallLoop>
+		</Structure>
+	</Document>
+	<Document name1="Test Compliance Matrix" type="document" receiverName="project" receiverClass="Project" template="default.xlsx" reportName="Test Compliance Matrix">
+		<DocParameter name="reqDocs" class="Document" condition="isRequirementDocument" />
+		<StructParameter name="withTitle" value="FALSE" />
+		<Structure type="table">
+			<StructParameter name="numberOfColumns" value="7" />
+			<Structure type="titleRow">
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Requirement ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Plan Reference" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="100pt" />
+					<DataTerminalText text1="Test Plan Version" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="250pt" />
+					<DataTerminalText text1="Test Plan Name" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Case ID" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="80pt" />
+					<DataTerminalText text1="Test Type" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="80pt" />
+					<DataTerminalText text1="Test Result" index="0" />
+				</Structure>
+			</Structure>
+			<DataMethodCallLoop receiver="reqDocs" variable="curReq" method="requirements">
+				<DataMethodCallLoop receiver="curReq" variable="curVerif" method="getVerifications" loopIfNull="true">
+					<Structure type="line">
+						<Structure type="cell">
+							<StructParameter name="displayBlank" value="TRUE" />
+							<DataMethodCallText receiver="curReq" method="ident">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocReference">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocIndex">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="getDocTitle">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="ident">
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="attributeValue">
+								<CallParameter value="Type" />
+							</DataMethodCallText>
+						</Structure>
+						<Structure type="cell">
+							<DataMethodCallText receiver="curVerif" method="attributeValue">
+								<CallParameter value="Test Result" />
+							</DataMethodCallText>
+						</Structure>
+					</Structure>
+				</DataMethodCallLoop>
+			</DataMethodCallLoop>
+		</Structure>
+	</Document>
+	<Document name1="Uncovering Test Cases" type="document" receiverName="project" receiverClass="Project" template="default.xlsx" reportName="Uncovering Elements">
+		<DocParameter name="listDocs" class="Document" condition="isValidationDocument" />
+		<StructParameter name="withTitle" value="FALSE" />
+		<Structure type="table">
+			<StructParameter name="numberOfColumns" value="4" />
+			<Structure type="titleRow">
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Plan Reference" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="100pt" />
+					<DataTerminalText text1="Test Plan Version" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="200pt" />
+					<DataTerminalText text1="Test Plan Name" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Case ID" index="0" />
+				</Structure>
+			</Structure>
+			<DataMethodCallLoop receiver="listDocs" variable="curTest" method="requirements" condition="$NO(references[isRequirement])">
+				<Structure type="line">
+					<Structure type="cell">
+						<StructParameter name="displayBlank" value="TRUE" />
+						<DataMethodCallText receiver="curTest" method="getDocReference">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="getDocIndex">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="getDocTitle">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="ident">
+						</DataMethodCallText>
+					</Structure>
+				</Structure>
+			</DataMethodCallLoop>
+		</Structure>
+	</Document>
+	<Document name1="Test Cases without type" type="document" receiverName="project" receiverClass="Project" template="default.xlsx" reportName="Uncovering Elements">
+		<DocParameter name="listDocs" class="Document" condition="isValidationDocument" />
+		<StructParameter name="withTitle" value="FALSE" />
+		<Structure type="table">
+			<StructParameter name="numberOfColumns" value="4" />
+			<Structure type="titleRow">
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Plan Reference" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="100pt" />
+					<DataTerminalText text1="Test Plan Version" index="0" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="200pt" />
+					<DataTerminalText text1="Test Plan Name" />
+				</Structure>
+				<Structure type="columnTitle">
+					<StructParameter name="columnWidth" value="150pt" />
+					<DataTerminalText text1="Test Case ID" index="0" />
+				</Structure>
+			</Structure>
+			<DataMethodCallLoop receiver="listDocs" variable="curTest" method="requirements" condition="attributeValue(&quot;Type&quot;)=&quot;&quot;">
+				<Structure type="line">
+					<Structure type="cell">
+						<StructParameter name="displayBlank" value="TRUE" />
+						<DataMethodCallText receiver="curTest" method="getDocReference">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="getDocIndex">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="getDocTitle">
+						</DataMethodCallText>
+					</Structure>
+					<Structure type="cell">
+						<DataMethodCallText receiver="curTest" method="ident">
+						</DataMethodCallText>
+					</Structure>
+				</Structure>
+			</DataMethodCallLoop>
+		</Structure>
+	</Document>
+	<Document name1="Snapshots Comparison" name2="Comparaison d'archivages" type="document" receiverName="project" receiverClass="Project" template="Comparison_Archive.xlsm" reportName="Comparaison_archivages">
+		<DocParameter name="listSnapshots" class="Project" message1="Select at least one version" message2="Sélectionner au moins une version" message3="选择至少一个版本" message4="最低1つのバージョンを選択してください" />
+		<StructParameter name="withTitle" value="FALSE" />
+		<DataMethodCallLoop receiver="listSnapshots" variable="oldSnapshot" condition="$CNT(listSnapshots)&gt;1" sortMethod="name">
+			<DataMethodCallLoop receiver="listSnapshots" variable="newSnapshot" condition="versionDateTime&gt;oldSnapshot.versionDateTime AND ($INDEX(listSnapshots, newSnapshot)=($INDEX(listSnapshots,oldSnapshot)+1))">
+				<DataMethodCallLoop receiver="newSnapshot" variable="compSnapshot" method="compare">
+					<CallParameter name="oldSnapshot" />
+					<Structure type="title">
+						<Structure type="sectionTitle">
+							<DataTerminalText text1="Differences in &quot;" text2="Différences dans &quot;" text3="对比“" text4="差分&quot;" />
+							<DataMethodCallText receiver="newSnapshot" method="versionName">
+							</DataMethodCallText>
+							<DataTerminalText text1="&quot; from &quot;" text2="&quot; par rapport à &quot;" text3="&quot; 从 &quot;" text4="&quot;と&quot;" />
+							<DataMethodCallText receiver="oldSnapshot" method="versionName">
+							</DataMethodCallText>
+							<DataTerminalText text1="&quot;" text2="&quot;" text3="&quot;" text4="&quot;" />
+						</Structure>
+						<Structure type="table">
+							<StructParameter name="numberOfColumns" value="5" />
+							<Structure type="titleRow">
+								<Structure type="columnTitle">
+									<StructParameter name="columnWidth" value="150pt" />
+									<DataTerminalText text1="Requirement ID" text2="Requirement ID" />
+								</Structure>
+								<Structure type="columnTitle">
+									<StructParameter name="columnWidth" value="250pt" />
+									<DataTerminalText text1="Old" text2="Old" />
+								</Structure>
+								<Structure type="columnTitle">
+									<StructParameter name="columnWidth" value="250pt" />
+									<DataTerminalText text1="New" text2="New" />
+								</Structure>
+								<Structure type="columnTitle">
+									<StructParameter name="columnWidth" value="100pt" />
+									<DataTerminalText text1="Status" text2="Status" />
+								</Structure>
+								<Structure type="columnTitle">
+									<DataTerminalText text1="Text Status" text2="Text Status" />
+								</Structure>
+							</Structure>
+							<DataMethodCallLoop receiver="compSnapshot" variable="newReq" method="newRequirements" sortMethod="print">
+								<Structure type="line">
+									<Structure type="cell">
+										<DataMethodCallText receiver="newReq" method="print">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="N/A - NEW" text2="N/A - NEW" />
+									</Structure>
+									<Structure type="cell">
+										<DataMethodCallText receiver="newReq" method="text">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="NEW" text2="NEW" />
+									</Structure>
+									<Structure type="cell">
+									</Structure>
+								</Structure>
+							</DataMethodCallLoop>
+							<DataMethodCallLoop receiver="compSnapshot" variable="delReq" method="oldRequirements" sortMethod="print">
+								<Structure type="line">
+									<Structure type="cell">
+										<DataMethodCallText receiver="delReq" method="print">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataMethodCallText receiver="delReq" method="text">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="N-A - Removed" text2="N-A - Removed" />
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="DELETED" text2="DELETED" />
+									</Structure>
+									<Structure type="cell">
+									</Structure>
+								</Structure>
+							</DataMethodCallLoop>
+							<DataMethodCallLoop receiver="compSnapshot" variable="modReq" method="modifiedRequirements" sortMethod="print">
+								<DataMethodCallLoop receiver="compSnapshot" variable="oldReq" method="oldElementForModifiedElement" sortMethod="ident">
+									<CallParameter name="modReq" />
+									<Structure type="line">
+										<Structure type="cell">
+											<DataMethodCallText receiver="modReq" method="print">
+											</DataMethodCallText>
+										</Structure>
+										<Structure type="cell">
+											<DataMethodCallText receiver="oldReq" method="text">
+											</DataMethodCallText>
+										</Structure>
+										<Structure type="cell">
+											<DataMethodCallText receiver="modReq" method="text">
+											</DataMethodCallText>
+										</Structure>
+										<Structure type="cell">
+											<DataTerminalText text1="MODIFIED" text2="MODIFIED" />
+										</Structure>
+										<Structure type="cell">
+											<DataTerminalText text1="MODIFIED" text2="MODIFIED" condition="oldReq.text /= modReq.text" />
+											<DataTerminalText text1="UNCHANGED" text2="UNCHANGED" condition="oldReq.text = modReq.text" />
+										</Structure>
+									</Structure>
+								</DataMethodCallLoop>
+							</DataMethodCallLoop>
+						</Structure>
+					</Structure>
+				</DataMethodCallLoop>
+			</DataMethodCallLoop>
+		</DataMethodCallLoop>
+		<DataMethodCallLoop receiver="listSnapshots" variable="lastSnapshot" condition="$CNT(listSnapshots)=1 OR lastSnapshot=$LAST(listSnapshots)">
+			<DataMethodCallLoop receiver="project" variable="compSnapshot1" method="compare">
+				<CallParameter name="lastSnapshot" />
+				<Structure type="title">
+					<Structure type="sectionTitle">
+						<DataTerminalText text1="Differences in current project from &quot;" text2="Différences dans le projet courant par rapport à &quot;" text3="对比“" text4="差分&quot;" />
+						<DataMethodCallText receiver="lastSnapshot" method="versionName">
+						</DataMethodCallText>
+						<DataTerminalText text1="&quot;" text2="&quot;" text3="&quot;" text4="&quot;" />
+					</Structure>
+					<Structure type="table">
+						<StructParameter name="numberOfColumns" value="5" />
+						<Structure type="titleRow">
+							<Structure type="columnTitle">
+								<StructParameter name="columnWidth" value="150pt" />
+								<DataTerminalText text1="Requirement ID" text2="Requirement ID" />
+							</Structure>
+							<Structure type="columnTitle">
+								<StructParameter name="columnWidth" value="250pt" />
+								<DataTerminalText text1="Old" text2="Old" />
+							</Structure>
+							<Structure type="columnTitle">
+								<StructParameter name="columnWidth" value="250pt" />
+								<DataTerminalText text1="New" text2="New" />
+							</Structure>
+							<Structure type="columnTitle">
+								<StructParameter name="columnWidth" value="100pt" />
+								<DataTerminalText text1="Status" text2="Status" />
+							</Structure>
+							<Structure type="columnTitle">
+								<StructParameter name="columnWidth" value="100pt" />
+								<DataTerminalText text1="Text Status" text2="Text Status" />
+							</Structure>
+						</Structure>
+						<DataMethodCallLoop receiver="compSnapshot1" variable="newReq1" method="newRequirements" sortMethod="print">
+							<Structure type="line">
+								<Structure type="cell">
+									<DataMethodCallText receiver="newReq1" method="print">
+									</DataMethodCallText>
+								</Structure>
+								<Structure type="cell">
+									<DataTerminalText text1="N/A - NEW" text2="N/A - NEW" />
+								</Structure>
+								<Structure type="cell">
+									<DataMethodCallText receiver="newReq1" method="text">
+									</DataMethodCallText>
+								</Structure>
+								<Structure type="cell">
+									<DataTerminalText text1="NEW" text2="NEW" />
+								</Structure>
+								<Structure type="cell">
+								</Structure>
+							</Structure>
+						</DataMethodCallLoop>
+						<DataMethodCallLoop receiver="compSnapshot1" variable="delReq1" method="oldRequirements" sortMethod="print">
+							<Structure type="line">
+								<Structure type="cell">
+									<DataMethodCallText receiver="delReq1" method="print">
+									</DataMethodCallText>
+								</Structure>
+								<Structure type="cell">
+									<DataMethodCallText receiver="delReq1" method="text">
+									</DataMethodCallText>
+								</Structure>
+								<Structure type="cell">
+									<DataTerminalText text1="N-A - Removed" text2="N-A - Removed" />
+								</Structure>
+								<Structure type="cell">
+									<DataTerminalText text1="DELETED" text2="DELETED" />
+								</Structure>
+								<Structure type="cell">
+								</Structure>
+							</Structure>
+						</DataMethodCallLoop>
+						<DataMethodCallLoop receiver="compSnapshot1" variable="modReq1" method="modifiedRequirements" sortMethod="print">
+							<DataMethodCallLoop receiver="compSnapshot1" variable="oldReq1" method="oldElementForModifiedElement" sortMethod="ident">
+								<CallParameter name="modReq1" />
+								<Structure type="line">
+									<Structure type="cell">
+										<DataMethodCallText receiver="modReq1" method="print">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataMethodCallText receiver="oldReq1" method="text">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataMethodCallText receiver="modReq1" method="text">
+										</DataMethodCallText>
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="MODIFIED" text2="MODIFIED" />
+									</Structure>
+									<Structure type="cell">
+										<DataTerminalText text1="MODIFIED" text2="MODIFIED" condition="oldReq1.text /= modReq1.text" />
+										<DataTerminalText text1="UNCHANGED" text2="UNCHANGED" condition="oldReq1.text = modReq1.text" />
+									</Structure>
+								</Structure>
+							</DataMethodCallLoop>
+						</DataMethodCallLoop>
+					</Structure>
+				</Structure>
+			</DataMethodCallLoop>
+		</DataMethodCallLoop>
+	</Document>
+</DocumentList>

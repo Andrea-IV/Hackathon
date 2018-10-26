@@ -1,0 +1,34 @@
+// Prédicat disant si une exigence est une délégation correcte (i.e. est une exigence parente ou fille) d'une exigence source donnée
+METHOD Entity.isCorrectDelegation(srcReq : AbstractRequirement) : {
+	THIS $< (srcReq.allReferences $+ srcReq.allRequirementReferencers)[isRequirement AND (EACH != srcReq)]
+};
+
+// Prédicat permettant de savoir si une méthode de vérification donnée est déléguée par une exigence donnée à une exigence déléguée donnée
+METHOD AbstractRequirement.isDelegatedVerifMethod(vm : String, req : AbstractRequirement, delegReq : AbstractRequirement) : {
+	$SOME(req.links[(typeName = "Delegates_VM_"+vm) AND (entity = delegReq)])
+};
+
+// Récupération des vérifications déléguées d'une exigence
+METHOD AbstractRequirement.getDelegatedVerifications() : {
+	TMP delegReqs := links.entity[EACH ISA Requirement][isCorrectDelegation(THIS)];
+	
+	delegReqs.{
+		TMP curDelegReq := EACH;
+		requirementReferencers[document.isValidationDocument AND isDelegatedVerifMethod(attributeValue("Test Type"), THIS, curDelegReq)]
+	};
+};
+
+// Récupération des vérifications d'une exigence
+METHOD AbstractRequirement.getVerifications() -doc : {
+	requirementReferencers[document.isValidationDocument] $+ getDelegatedVerifications
+} LABEL "Content,verifications"|"Contenu,vérifications";
+
+// Récupération des liens de délégation vers des exigences qui ne sont ni parents ni enfants
+METHOD AbstractRequirement.getDelegationMismatch() : {
+	attributes[STRMATCH(typeName, "Bad_Delegates_*")].ident.SELECTUNIQUE(EACH);
+};
+
+// Règle : les méthodes de vérification déléguées doivent l'être à des exigences parentes ou filles
+RULE AbstractRequirement.badlyDelegatedVerifMethods -e1 : {
+	$NO(getDelegationMismatch)
+} LABEL "Verification delegation to non parent or child requirement"|"Délégation de vérification à une exigence non parent ou enfant" EXPLAIN $STRSEP(getDelegationMismatch, ", ");

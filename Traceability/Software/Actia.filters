@@ -1,0 +1,8 @@
+[Filters]
+Names=V&V
+
+[V&V]
+Booleans=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Cond1=Attribute.Actia_Word_standard_multi.Test Type,equal,$testType,AbstractRequirement
+Cond2=Attribute.Actia_Word_standard_multi.Test Type,isAbsent,X,AbstractRequirement
+Parameters=testType=
