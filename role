@@ -1,0 +1,5 @@
+########################### ROLE ###########################
+
+MECHA:Mechanic;
+ELEC:Electronic;
+TRACE:Customer;Electronic;Mechanic;Software;System;Traceability;
